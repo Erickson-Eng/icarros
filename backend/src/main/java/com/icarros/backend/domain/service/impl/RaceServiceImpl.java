@@ -2,6 +2,7 @@ package com.icarros.backend.domain.service.impl;
 
 import com.icarros.backend.application.dto.api.FormulaOneApi;
 import com.icarros.backend.application.dto.api.RaceApi;
+import com.icarros.backend.application.dto.api.RaceTableApi;
 import com.icarros.backend.domain.service.IFormulaOneService;
 import com.icarros.backend.domain.service.IRaceService;
 import lombok.AllArgsConstructor;
@@ -13,20 +14,22 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class RaceServiceJsonFilter implements IRaceService {
+public class RaceServiceImpl implements IRaceService {
 
     private IFormulaOneService formulaOneService;
 
-    public List<RaceApi> findRaceByRound(Integer round){
+    @Override
+    public RaceTableApi listRaceTable() {
+        FormulaOneApi api = formulaOneService.findFormulaOneApi();
+        return api.getMrDataApi().getRaceTable();
+    }
+
+    @Override
+    public List<RaceApi> findRaceBySeason(String season) {
         FormulaOneApi formulaOneApi = formulaOneService.findFormulaOneApi();
         return formulaOneApi.getMrDataApi()
                 .getRaceTable().getRaces()
-                .stream().filter(raceApi -> raceApi.getRound().equals(round.toString()))
+                .stream().filter(raceApi -> raceApi.getSeason().equals(season))
                 .collect(Collectors.toList());
-    }
-
-    public List<RaceApi> findAllRaces(){
-        FormulaOneApi formulaOneApi = formulaOneService.findFormulaOneApi();
-        return formulaOneApi.getMrDataApi().getRaceTable().getRaces();
     }
 }
