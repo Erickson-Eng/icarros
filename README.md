@@ -1,5 +1,4 @@
 # ICarros - Desafio backend 
-[![Heroku CI Status](https://icarros-backend.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/5ebe25b1-d32d-44ed-a73e-1af72953f7c3/tests)
 
 Esse desafio propõem que o desenvolvedor faça o consumo de uma api externa e realize a disponibilização desses dados via endpoint próprios.
 
