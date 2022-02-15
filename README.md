@@ -21,6 +21,12 @@ Caso você já tenha essas dependencias instaladas, ou, faz uso por exemplo de u
 Se você deseja estar executando o projeto pelo terminal é necessário é necessario que o maven esteja no seu path.
 - Como adicionar o maven no path variable [Guia](https://stackoverflow.com/questions/45119595/how-to-add-maven-to-the-path-variable).
 
+Quando você estiver dentro do diretorio backend/ basta executar no terminal o seguinte comando para executar localmente:
+``` 
+$ mvn clean install -DskipTests
+$ mvn spring-boot:run
+```
+
 ## Estrutura de diretorios
 
 Foi utilizado a padronização da estrutura Hexagonal, entretanto, como há diretorios que não houve necessidade de implementação dentro do dominio do negocio e dos resources a implementação ficou da seguinte forma:
@@ -36,7 +42,7 @@ Foi utilizado a padronização da estrutura Hexagonal, entretanto, como há dire
     - [Impl](https://github.com/Erickson-Eng/icarros/tree/main/backend/src/main/java/com/icarros/backend/domain/service/impl) *Classes concretas*
 ## Endpoints
 
-Todos os endpoints da aplicação se encotram disponiveis localmente e na cloud [Heroku]().
+Todos os endpoints da aplicação se encotram disponiveis localmente e na cloud [Heroku](https://icarros-backend.herokuapp.com/).
 
 - [Serviço no qual os dados foram retirados](https://ergast.com/api/f1/2017/last/results.json)
 
@@ -44,10 +50,10 @@ Todos os endpoints da aplicação se encotram disponiveis localmente e na cloud 
 
 | endpoint | Método HTTP | Retornos |
 | -------- | ----------- | -------- |
-| /api/v1/formula1 | GET | Retorna todos os dados da api
-| /api/v1/formula1/races | GET | Retorna uma tabela com todas as corridas
-| /api/v1/formula1/races/{season} | GET | Retorna uma tabela com as corridas da season (Ano).
-| /api/v1/formula1/driver | GET | Retorna todos os pilotos participantes da corrida.
-| /api/v1/formula1/driver/{driverId} | GET | Busca um piloto pelo seu identificador.
-| /api/v1/formula1/circuit | GET | Retorna o circuito dos dados disponibilizados.
-| /swagger-ui.html | | Documentação da API
+| [/api/v1/formula1](https://icarros-backend.herokuapp.com/api/v1/formula1) | GET | Retorna todos os dados da api
+| [/api/v1/formula1/races](https://icarros-backend.herokuapp.com/api/v1/formula1/races) | GET | Retorna uma tabela com todas as corridas
+| [/api/v1/formula1/races/{season}](https://icarros-backend.herokuapp.com) | GET | Retorna uma tabela com as corridas da season (Ano).
+| [/api/v1/formula1/driver](https://icarros-backend.herokuapp.com/api/v1/formula1/races/2017) | GET | Retorna todos os pilotos participantes da corrida.
+| [/api/v1/formula1/driver/{driverId}](https://icarros-backend.herokuapp.com/api/v1/formula1/driver/vettel) | GET | Busca um piloto pelo seu identificador.
+| [/api/v1/formula1/circuit](https://icarros-backend.herokuapp.com/api/v1/formula1/circuit) | GET | Retorna o circuito dos dados disponibilizados.
+| [/swagger-ui.html](https://icarros-backend.herokuapp.com/swagger-ui.html) | | Documentação da API
