@@ -52,7 +52,7 @@ Todos os endpoints da aplicação se encotram disponiveis localmente e na cloud 
 | -------- | ----------- | -------- |
 | [/api/v1/formula1](https://icarros-backend.herokuapp.com/api/v1/formula1) | GET | Retorna todos os dados da api
 | [/api/v1/formula1/races](https://icarros-backend.herokuapp.com/api/v1/formula1/races) | GET | Retorna uma tabela com todas as corridas
-| [/api/v1/formula1/races/{season}](https://icarros-backend.herokuapp.com) | GET | Retorna uma tabela com as corridas da season (Ano).
+| [/api/v1/formula1/races/{season}](https://icarros-backend.herokuapp.com/api/v1/formula1/races/2017) | GET | Retorna uma tabela com as corridas da season (Ano).
 | [/api/v1/formula1/driver](https://icarros-backend.herokuapp.com/api/v1/formula1/races/2017) | GET | Retorna todos os pilotos participantes da corrida.
 | [/api/v1/formula1/driver/{driverId}](https://icarros-backend.herokuapp.com/api/v1/formula1/driver/vettel) | GET | Busca um piloto pelo seu identificador.
 | [/api/v1/formula1/circuit](https://icarros-backend.herokuapp.com/api/v1/formula1/circuit) | GET | Retorna o circuito dos dados disponibilizados.
